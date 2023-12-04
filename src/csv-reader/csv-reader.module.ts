@@ -9,7 +9,8 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         name: 'Monitoring_MICROSERVICE',
         transport: Transport.RMQ,
         options: {
-          urls: ['amqp://localhost:5672'],
+          //urls: ['amqp://localhost:5672'], this is for running locally
+          urls: ['amqp://rabbit:rabbit@127.0.0.1:5672'],
           queue: 'monitoring',
           queueOptions: {
             durable: false,
